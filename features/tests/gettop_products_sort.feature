@@ -6,7 +6,7 @@ Feature: Test Scenarios for check gettop all products sort page
     Given Open gettop page
     When Click on <category> category
      And Select sort method <sort_method>
-    Then verify macbook product <sort_method>
+    Then verify products order by <sort_method>
     Examples:
     |category   | sort_method                |
     |mac        | Sort by price: low to high |
@@ -20,4 +20,12 @@ Feature: Test Scenarios for check gettop all products sort page
     |accessories    | Sort by price: low to high |
     |accessories    | Sort by price: high to low |
 
+
+  Scenario Outline: Check gettop website all products sort links
+    Given Open gettop orderby <order_name> page
+    Then verify products Sort by <order_name> <sort_method>
+    Examples:
+    |order_name       |    sort_method              |
+    |price            |    low to high              |
+    |price-desc       |    high to low              |
 
