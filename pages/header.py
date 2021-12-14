@@ -1,6 +1,6 @@
 from pages.base_page import Page
 from selenium.webdriver.common.by import By
-
+from time import sleep
 
 
 class Header(Page):
@@ -11,6 +11,7 @@ class Header(Page):
         return [self.CATEGORY_NAME[0], self.CATEGORY_NAME[1].replace('{CATEGORY}', expected_category)]
 
     def click_category(self, category_name: str):
+        sleep(4)
         locator = self._get_expected_category_locator(category_name)
         self.click(*locator)
 

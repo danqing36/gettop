@@ -7,8 +7,8 @@ from selenium.webdriver.support.events import EventFiringWebDriver
 from support.logger import logger, MyListener
 
 # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-bs_user = ''
-bs_pw = ''
+# bs_user = 'dqqi_ZhgHdz'
+# bs_pw = '2U39nzLsemx11Kppu7as'
 
 # Allure command:
 # behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/product_page.feature
@@ -21,12 +21,14 @@ def browser_init(context, test_name):
     """
     context.driver = webdriver.Chrome(executable_path=r'/Users/fq/Documents/careerist/gettop/chromedriver')
     # context.driver = webdriver.Safari()
-    # context.driver = webdriver.Firefox(executable_path='/Users/svetlanalevinsohn/JobEasy/7-python-selenium-automation/geckodriver')
+    # context.driver = webdriver.Firefox(executable_path='/Users/fq/Documents/careerist/gettop/geckodriver2')
 
     ## HEADLESS MODE ####
-    # options = webdriver.ChromeOptions(executable_path=r'C:\Utility\BrowserDrivers\chromedriver.exe'')
+    # options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
-    # context.driver = webdriver.Chrome(chrome_options=options)
+    #if selenium.common.exceptions.ElementNotInteractableException, add window-size into chrome option
+    # options.add_argument('window-size=1920,1080')
+    # context.driver = webdriver.Chrome(executable_path=r'/Users/fq/Documents/careerist/gettop/chromedriver',chrome_options=options)
 
     ### EventFiringWebDriver - log file ###
     ### for drivers ###
